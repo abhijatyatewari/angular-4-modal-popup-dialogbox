@@ -1,0 +1,18 @@
+<ng-template #content>
+  <div *ngIf="showTitle" class="modal-header">
+       <button type="button" *ngIf="modalData.showCloseButton" class="btn btn-secondary" (click)="close('Close click')">x</button>
+       <h4 *ngIf="modalData.showTitle" class="modal-title">{{modalData.modalTitle}}</h4>
+  </div>
+  <div class="modal-body">
+     <div *ngIf="modalData.showMessage" class="msg-text" aria-hidden="true">{{modalData.modalMessage}}</div>
+    <div *ngIf="modalData.showContent" class="msg__text">{{modalData.modalContent}}</div>
+      <div *ngIf="modalData.showCancelButton" class="modal-option">
+    <button type="button" class="btn btn-secondary" (click)="dismiss('cancel click')">Cancel</button>
+     </div>
+      <div class="modal-option">
+        <button type="button" class="btn btn-primary" (click)="accept('ok click')">OK</button>
+      </div>
+  </div>
+  <div  *ngIf="modalData.showContent" class="modal-footer">
+  </div>
+</ng-template>
